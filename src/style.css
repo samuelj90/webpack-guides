@@ -1,3 +1,10 @@
+body{
+	background: url('./bg.png');
+}
 .hello{
     color: red;
+    background: url('./component/bg.png');
+    height: auto;
+    width: auto;
+    min-height: 250px;
 }

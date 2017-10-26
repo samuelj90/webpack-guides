@@ -27,7 +27,19 @@ module.exports = {
             }
           })()
         }]
-      }
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [{
+          loader: 'file-loader',
+          options: (() => {
+            return {
+              name: 'assets/fonts/[path][name].[ext]?[hash]',
+              publicPath: './dist/',
+            }
+          })()
+        }]
+      },
     ]
   }
 };

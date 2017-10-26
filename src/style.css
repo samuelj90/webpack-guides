@@ -1,9 +1,16 @@
+@font-face {
+   font-family: 'MyFont';
+   src:  url('./component/GreatVibes-Regular.otf');
+   font-weight: 600;
+   font-style: normal;
+}
 body{
 	background: url('./bg.png');
 }
 .hello{
     color: red;
     background: url('./component/bg.png');
+    font-family: 'MyFont';
     height: auto;
     width: auto;
     min-height: 250px;

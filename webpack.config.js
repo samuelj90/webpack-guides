@@ -9,6 +9,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   context: path.resolve(__dirname, "src"),
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {

@@ -10,6 +10,10 @@ module.exports = {
   },
   context: path.resolve(__dirname, "src"),
   devtool: 'inline-source-map',
+  devServer: {
+    port:'3000',
+    contentBase: './dist'
+  },
   module: {
     rules: [
       {

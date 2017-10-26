@@ -1,5 +1,6 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './index.js',
@@ -23,8 +24,7 @@ module.exports = {
           loader: 'file-loader',
           options: (() => {
             return {
-              name: 'assets/images/[path][name].[ext]?[hash]',
-              publicPath: './dist/',
+              name: './assets/images/[path][name].[ext]?[hash]',
             }
           })()
         }]
@@ -35,8 +35,7 @@ module.exports = {
           loader: 'file-loader',
           options: (() => {
             return {
-              name: 'assets/fonts/[path][name].[ext]?[hash]',
-              publicPath: './dist/',
+              name: './assets/fonts/[path][name].[ext]?[hash]',
             }
           })()
         }]
@@ -44,6 +43,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist'])
+    new CleanWebpackPlugin(['dist']),
+    new HtmlWebpackPlugin({
+      title: 'Output Management'
+    })
   ]
 };

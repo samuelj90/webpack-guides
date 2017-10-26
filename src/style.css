@@ -7,11 +7,3 @@
 body{
 	background: url('./bg.png');
 }
-.hello{
-    color: red;
-    background: url('./component/bg.png');
-    font-family: 'MyFont';
-    height: auto;
-    width: auto;
-    min-height: 250px;
-}

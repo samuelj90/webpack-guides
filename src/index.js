@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import './style.css'
+import './component/hello.css'
 function component() {
     var element = document.createElement('div');
     element.classList.add('hello');

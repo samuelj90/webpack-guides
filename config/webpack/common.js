@@ -1,20 +1,15 @@
 const path = require('path');
+const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
+
 module.exports = {
   entry: './index.js',
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: '[name].bundle.js?[hash]',
+    path: path.resolve(process.cwd(), 'dist')
   },
-  context: path.resolve(__dirname, "src"),
-  devtool: 'inline-source-map',
-  devServer: {
-    port: '3000',
-    contentBase: './dist',
-    hot: true
-  },
+  context: path.resolve(process.cwd(), "src"),
   module: {
     rules: [
       {
@@ -51,9 +46,11 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Output Management'
+      template:'./index.html'
     }),
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common' // Specify the common bundle's name.
+    })  
   ]
 };

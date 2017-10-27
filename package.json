@@ -5,9 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run webpack -- --config webpack.config.js",
-    "watch": "npm run start -- --progress --watch --color",
-    "dev": "npm run webpack-dev-server --  --config webpack.config.js --open --color --compress",
+    "start": "npm run dev",
+    "watch": "npm run watch-dev",
+    "watch-prod": "npm run build-dev -- --watch",
+    "watch-dev": "npm run build-prod -- --watch",
+    "build": "npm run build-prod",
+    "build-prod": "npm run webpack -- --config ./config/webpack/production.js --progress --color",
+    "build-dev": "npm run webpack -- --config ./config/webpack/development.js --progress --color",
+    "dev": "npm run webpack-dev-server --  --config ./config/webpack/development.js --open --color",
     "webpack-dev-server": "webpack-dev-server",
     "webpack": "webpack"
   },
@@ -21,7 +26,9 @@
     "html-webpack-plugin": "^2.30.1",
     "lodash": "^4.17.4",
     "style-loader": "^0.19.0",
+    "uglifyjs-webpack-plugin": "^1.0.1",
     "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.9.3"
+    "webpack-dev-server": "^2.9.3",
+    "webpack-merge": "^4.1.0"
   }
 }

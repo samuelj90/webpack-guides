@@ -1,7 +1,7 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const webpack = require('webpack');
 module.exports = {
   entry: './index.js',
   output: {
@@ -11,8 +11,9 @@ module.exports = {
   context: path.resolve(__dirname, "src"),
   devtool: 'inline-source-map',
   devServer: {
-    port:'3000',
-    contentBase: './dist'
+    port: '3000',
+    contentBase: './dist',
+    hot: true
   },
   module: {
     rules: [
@@ -51,6 +52,8 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Output Management'
-    })
+    }),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };

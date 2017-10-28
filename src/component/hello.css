@@ -1,9 +1,0 @@
-.hello{
-    color: green;
-    background: url('./bg.png');
-    font-family: 'MyFont';
-    height: auto;
-    width: auto;
-    min-height: 250px;
-    font-size: 30px;
-}

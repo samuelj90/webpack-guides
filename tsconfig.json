@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "es5",
+            "es6",
+            "dom"
+        ],
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "removeComments": false,
+        "sourceMap": true
+    },
+    "files": [
+        "src/bootstrap.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

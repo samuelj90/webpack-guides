@@ -5,5 +5,5 @@ const template = require('./app.component.html');
     template,
 })
 export class AppComponent {
-    private title: string = 'Hello'
+    private title: string = 'Hello Webpack'
 }
